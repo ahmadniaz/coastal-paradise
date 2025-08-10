@@ -119,9 +119,10 @@ export default function PropertyDetails() {
                 <Box sx={{ 
                   display: 'flex', 
                   alignItems: 'center', 
-                  gap: 0,
+                  gap: 2,
                   flexWrap: 'nowrap',
                   overflowX: 'auto',
+                  width: '100%',
                   '&::-webkit-scrollbar': {
                     height: 4,
                   },
@@ -149,7 +150,8 @@ export default function PropertyDetails() {
                             backgroundColor: 'background.paper',
                             border: '1px solid',
                             borderColor: 'divider',
-                            minWidth: '200px',
+                            minWidth: '120px',
+                            flex: '1 1 0px',
                             '&:hover': {
                               transform: 'translateY(-4px)',
                               boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
@@ -159,7 +161,7 @@ export default function PropertyDetails() {
                         >
                           <stat.icon
                             sx={{
-                              fontSize: '3.5rem',
+                              fontSize: '2.5rem',
                               color: 'primary.main',
                               mb: 2,
                             }}
@@ -187,17 +189,6 @@ export default function PropertyDetails() {
                           </Typography>
                         </Card>
                       </motion.div>
-                      {index < propertyStats.length - 1 && (
-                        <Box
-                          sx={{
-                            width: '2px',
-                            height: '60px',
-                            backgroundColor: 'divider',
-                            mx: 2,
-                            borderRadius: 1,
-                          }}
-                        />
-                      )}
                     </React.Fragment>
                   ))}
                 </Box>
