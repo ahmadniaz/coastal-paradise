@@ -68,7 +68,7 @@ export default function PropertyDetails() {
       }}
     >
       <Container maxWidth={false} sx={{ px: { xs: 2, sm: 4, md: 6, lg: 8 } }}>
-        <Grid container spacing={6} alignItems="center" sx={{ width: '100%' }}>
+        <Grid container spacing={6} sx={{ width: '100%' }}>
           {/* Left Content - Description */}
           <Grid size={{ xs: 12, lg: 6 }}>
             <motion.div
@@ -203,6 +203,54 @@ export default function PropertyDetails() {
                 </Box>
               </Box>
             </motion.div>
+              {/* Price Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <Card
+                  sx={{
+                    mt: 4,
+                    p: 3,
+                    background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
+                    color: 'white',
+                    textAlign: 'center',
+                  }}
+                >
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      fontFamily: 'var(--font-playfair)',
+                      fontWeight: 700,
+                      mb: 1,
+                    }}
+                  >
+                    ${propertyData.price.base}
+                  </Typography>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontFamily: 'var(--font-poppins)',
+                      fontWeight: 500,
+                      mb: 2,
+                      opacity: 0.9,
+                    }}
+                  >
+                    per night
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontFamily: 'var(--font-poppins)',
+                      opacity: 0.8,
+                    }}
+                  >
+                    Flexible cancellation • No booking fees
+                  </Typography>
+                </Card>
+              </motion.div>
           </Grid>
 
           {/* Right Content - Features */}
@@ -278,54 +326,7 @@ export default function PropertyDetails() {
                 ))}
               </Grid>
 
-              {/* Price Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <Card
-                  sx={{
-                    mt: 4,
-                    p: 3,
-                    background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
-                    color: 'white',
-                    textAlign: 'center',
-                  }}
-                >
-                  <Typography
-                    variant="h4"
-                    sx={{
-                      fontFamily: 'var(--font-playfair)',
-                      fontWeight: 700,
-                      mb: 1,
-                    }}
-                  >
-                    ${propertyData.price.base}
-                  </Typography>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      fontFamily: 'var(--font-poppins)',
-                      fontWeight: 500,
-                      mb: 2,
-                      opacity: 0.9,
-                    }}
-                  >
-                    per night
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontFamily: 'var(--font-poppins)',
-                      opacity: 0.8,
-                    }}
-                  >
-                    Flexible cancellation • No booking fees
-                  </Typography>
-                </Card>
-              </motion.div>
+            
             </motion.div>
           </Grid>
         </Grid>
