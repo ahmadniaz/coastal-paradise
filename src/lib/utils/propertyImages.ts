@@ -89,8 +89,8 @@ export const propertyImages = {
 // Helper function to get a random image from a category
 export const getRandomImage = (category: keyof typeof propertyImages): string => {
   const images = propertyImages[category];
-  if (Array.isArray(images)) {
-    return images[Math.floor(Math.random() * images.length)];
+  if (Array.isArray(images) && images.length > 0) {
+    return images[Math.floor(Math.random() * images.length)] || '';
   }
   return '';
 };

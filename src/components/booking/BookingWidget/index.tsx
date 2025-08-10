@@ -64,6 +64,10 @@ export default function BookingWidget() {
     ? Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24))
     : 0;
 
+  const basePrice = propertyData.price.base * nights;
+  const guestFee = guests > 4 ? Math.round(basePrice * 0.2) : 0;
+  const totalPrice = basePrice + guestFee;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

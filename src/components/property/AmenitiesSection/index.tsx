@@ -139,9 +139,9 @@ export default function AmenitiesSection() {
         {amenityCategories.map((category, index) => (
           <TabPanel key={category.id} value={selectedCategory} index={index}>
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Grid container spacing={3} sx={{ maxWidth: '1200px' }}>
+              <Grid container spacing={3} sx={{ maxWidth: '1200px', width: '100%' }}>
                 {getAmenitiesByCategory(category.id).map((amenity, amenityIndex) => (
-                  <Grid item xs={12} sm={6} md={4} key={amenity.id}>
+                  <Grid size={{ xs: 12, sm: 6, md: 4 }} key={amenity.id}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

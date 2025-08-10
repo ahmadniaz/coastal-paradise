@@ -78,17 +78,23 @@ export default function FullGallery() {
   };
 
   const handleNextImage = () => {
-    const currentImages = galleryCategories[selectedCategory].images;
+    const currentCategory = galleryCategories[selectedCategory];
+    if (!currentCategory) return;
+    
+    const currentImages = currentCategory.images;
     const nextIndex = (currentImageIndex + 1) % currentImages.length;
     setCurrentImageIndex(nextIndex);
-    setSelectedImage(currentImages[nextIndex]);
+    setSelectedImage(currentImages[nextIndex] || null);
   };
 
   const handlePrevImage = () => {
-    const currentImages = galleryCategories[selectedCategory].images;
+    const currentCategory = galleryCategories[selectedCategory];
+    if (!currentCategory) return;
+    
+    const currentImages = currentCategory.images;
     const prevIndex = currentImageIndex === 0 ? currentImages.length - 1 : currentImageIndex - 1;
     setCurrentImageIndex(prevIndex);
-    setSelectedImage(currentImages[prevIndex]);
+    setSelectedImage(currentImages[prevIndex] || null);
   };
 
   const getImagesByCategory = (categoryId: string) => {
@@ -183,9 +189,9 @@ export default function FullGallery() {
         {/* Gallery Content */}
         {galleryCategories.map((category, index) => (
           <TabPanel key={category.id} value={selectedCategory} index={index}>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} sx={{ width: '100%' }}>
               {getImagesByCategory(category.id).map((image, imageIndex) => (
-                <Grid item xs={12} sm={6} md={4} lg={3} key={imageIndex}>
+                <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={imageIndex}>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

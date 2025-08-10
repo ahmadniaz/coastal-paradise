@@ -95,9 +95,9 @@ export default function HouseRules() {
               <Container maxWidth={false} sx={{ px: { xs: 2, sm: 4, md: 6, lg: 8 }, pt: 4 }}>
  
 
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={4} justifyContent="center" sx={{ width: '100%' }}>
           {ruleSections.map((section, sectionIndex) => (
-            <Grid item xs={12} sm={6} lg={3} key={sectionIndex}>
+            <Grid size={{ xs: 12, sm: 6, lg: 3 }} key={sectionIndex}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

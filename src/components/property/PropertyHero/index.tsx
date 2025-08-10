@@ -71,9 +71,9 @@ export default function PropertyHero() {
 
       {/* Content */}
       <Container maxWidth={false} sx={{ position: 'relative', zIndex: 2, px: { xs: 2, sm: 4, md: 6, lg: 8 } }}>
-        <Grid container justifyContent="center" alignItems="center" sx={{ minHeight: '80vh' }}>
+        <Grid container justifyContent="center" alignItems="center" sx={{ minHeight: '80vh', width: '100%' }}>
           {/* Centered Content */}
-          <Grid item xs={12} md={10} lg={8}>
+          <Grid size={{ xs: 12, md: 10, lg: 8 }}>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}

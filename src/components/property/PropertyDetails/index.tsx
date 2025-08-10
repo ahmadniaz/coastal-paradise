@@ -68,9 +68,9 @@ export default function PropertyDetails() {
       }}
     >
       <Container maxWidth={false} sx={{ px: { xs: 2, sm: 4, md: 6, lg: 8 } }}>
-        <Grid container spacing={6} alignItems="center">
+        <Grid container spacing={6} alignItems="center" sx={{ width: '100%' }}>
           {/* Left Content - Description */}
-          <Grid item xs={12} lg={6}>
+          <Grid size={{ xs: 12, lg: 6 }}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -206,7 +206,7 @@ export default function PropertyDetails() {
           </Grid>
 
           {/* Right Content - Features */}
-          <Grid item xs={12} lg={6}>
+          <Grid size={{ xs: 12, lg: 6 }}>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -225,9 +225,9 @@ export default function PropertyDetails() {
                 What Makes Us Special
               </Typography>
 
-              <Grid container spacing={4} justifyContent="center">
+              <Grid container spacing={4} justifyContent="center" sx={{ width: '100%' }}>
                 {propertyData.description.features.map((feature, index) => (
-                  <Grid item xs={12} sm={6} key={index}>
+                  <Grid size={{ xs: 12, sm: 6 }} key={index}>
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}

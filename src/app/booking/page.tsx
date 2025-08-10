@@ -81,9 +81,9 @@ export default function BookingPage() {
 
       {/* Booking Content */}
       <Container maxWidth="xl" sx={{ py: 8 }}>
-        <Grid container spacing={6}>
+        <Grid container spacing={6} sx={{ width: '100%' }}>
           {/* Booking Form */}
-          <Grid item xs={12} lg={8}>
+          <Grid size={{ xs: 12, lg: 8 }}>
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -148,8 +148,8 @@ export default function BookingPage() {
                         Choose your check-in and check-out dates for your perfect stay at Coastal Paradise.
                       </Typography>
                       
-                      <Grid container spacing={3}>
-                        <Grid item xs={12} sm={6}>
+                      <Grid container spacing={3} sx={{ width: '100%' }}>
+                        <Grid size={{ xs: 12, sm: 6 }}>
                           <TextField
                             fullWidth
                             label="Check-in Date"
@@ -165,7 +165,7 @@ export default function BookingPage() {
                             }}
                           />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid size={{ xs: 12, sm: 6 }}>
                           <TextField
                             fullWidth
                             label="Check-out Date"
@@ -181,7 +181,7 @@ export default function BookingPage() {
                             }}
                           />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid size={{ xs: 12, sm: 6 }}>
                           <TextField
                             fullWidth
                             label="Number of Guests"
@@ -228,8 +228,8 @@ export default function BookingPage() {
                         Please provide your contact information for booking confirmation.
                       </Typography>
                       
-                      <Grid container spacing={3}>
-                        <Grid item xs={12} sm={6}>
+                      <Grid container spacing={3} sx={{ width: '100%' }}>
+                        <Grid size={{ xs: 12, sm: 6 }}>
                           <TextField
                             fullWidth
                             label="First Name"
@@ -242,7 +242,7 @@ export default function BookingPage() {
                             }}
                           />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid size={{ xs: 12, sm: 6 }}>
                           <TextField
                             fullWidth
                             label="Last Name"
@@ -255,7 +255,7 @@ export default function BookingPage() {
                             }}
                           />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid size={{ xs: 12 }}>
                           <TextField
                             fullWidth
                             label="Email"
@@ -269,7 +269,7 @@ export default function BookingPage() {
                             }}
                           />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid size={{ xs: 12 }}>
                           <TextField
                             fullWidth
                             label="Phone"
@@ -282,7 +282,7 @@ export default function BookingPage() {
                             }}
                           />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid size={{ xs: 12 }}>
                           <TextField
                             fullWidth
                             label="Special Requests"
@@ -348,8 +348,8 @@ export default function BookingPage() {
                         >
                           Booking Summary
                         </Typography>
-                        <Grid container spacing={2}>
-                          <Grid item xs={6}>
+                        <Grid container spacing={2} sx={{ width: '100%' }}>
+                          <Grid size={{ xs: 6 }}>
                             <Typography
                               variant="body2"
                               sx={{
@@ -360,7 +360,7 @@ export default function BookingPage() {
                               Check-in:
                             </Typography>
                           </Grid>
-                          <Grid item xs={6}>
+                          <Grid size={{ xs: 6 }}>
                             <Typography
                               variant="body2"
                               sx={{
@@ -371,7 +371,7 @@ export default function BookingPage() {
                               March 15, 2024
                             </Typography>
                           </Grid>
-                          <Grid item xs={6}>
+                          <Grid size={{ xs: 6 }}>
                             <Typography
                               variant="body2"
                               sx={{
@@ -382,7 +382,7 @@ export default function BookingPage() {
                               Check-out:
                             </Typography>
                           </Grid>
-                          <Grid item xs={6}>
+                          <Grid size={{ xs: 6 }}>
                             <Typography
                               variant="body2"
                               sx={{
@@ -393,7 +393,7 @@ export default function BookingPage() {
                               March 20, 2024
                             </Typography>
                           </Grid>
-                          <Grid item xs={6}>
+                          <Grid size={{ xs: 6 }}>
                             <Typography
                               variant="body2"
                               sx={{
@@ -404,7 +404,7 @@ export default function BookingPage() {
                               Guests:
                             </Typography>
                           </Grid>
-                          <Grid item xs={6}>
+                          <Grid size={{ xs: 6 }}>
                             <Typography
                               variant="body2"
                               sx={{
@@ -415,7 +415,7 @@ export default function BookingPage() {
                               4 guests
                             </Typography>
                           </Grid>
-                          <Grid item xs={6}>
+                          <Grid size={{ xs: 6 }}>
                             <Typography
                               variant="body2"
                               sx={{
@@ -426,7 +426,7 @@ export default function BookingPage() {
                               Total:
                             </Typography>
                           </Grid>
-                          <Grid item xs={6}>
+                          <Grid size={{ xs: 6 }}>
                             <Typography
                               variant="h6"
                               sx={{
@@ -477,7 +477,7 @@ export default function BookingPage() {
           </Grid>
 
           {/* Booking Widget Sidebar */}
-          <Grid item xs={12} lg={4}>
+          <Grid size={{ xs: 12, lg: 4 }}>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}

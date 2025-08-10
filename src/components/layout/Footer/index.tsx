@@ -95,9 +95,9 @@ export default function Footer() {
       }}
     >
       <Container maxWidth="xl">
-        <Grid container spacing={4}>
+        <Grid container spacing={4} sx={{ width: '100%' }}>
           {/* Property Info */}
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -191,7 +191,7 @@ export default function Footer() {
 
           {/* Footer Links */}
           {footerSections.map((section, sectionIndex) => (
-            <Grid item xs={12} sm={6} md={2} key={sectionIndex}>
+            <Grid size={{ xs: 12, sm: 6, md: 2 }} key={sectionIndex}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

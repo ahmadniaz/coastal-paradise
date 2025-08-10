@@ -336,9 +336,9 @@ export default function AllReviews() {
         </motion.div>
 
         {/* Reviews Grid */}
-        <Grid container spacing={3}>
+        <Grid container spacing={3} sx={{ width: '100%' }}>
           {displayedReviews.map((review, index) => (
-            <Grid item xs={12} md={6} lg={4} key={review.id}>
+            <Grid size={{ xs: 12, md: 6, lg: 4 }} key={review.id}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
