@@ -32,7 +32,7 @@ export const propertyData = {
     bathroom: [
       "Bathtub",
       "Hair dryer",
-      "Conditioner",
+
       "Outdoor shower",
       "Hot water"
     ],
@@ -49,13 +49,14 @@ export const propertyData = {
     entertainment: [
       "TV",
       "Books and reading material",
-      "Board games"
+      "Board games",
+      "Beach chairs",
+      "Cooler",
+      "Snorkeling equipment",
+      "Bicycles"
     ],
     family: [
-      "Children's books and toys for ages 0-2 years old",
-      "Children's books and toys for ages 2-5 years old", 
-      "Children's books and toys for ages 5-10 years old",
-      "Children's books and toys for ages 10+ years old",
+      "Children's books and toys",
       "Babysitter recommendations"
     ],
     heating: [
@@ -97,8 +98,10 @@ export const propertyData = {
       "Outdoor furniture",
       "Outdoor dining area",
       "BBQ grill",
-      "Beach essentials (Beach towels, umbrella, beach blanket, snorkeling gear)",
-      "Bikes"
+      "Outdoor grill",
+      "Outside chair",
+      "Outdoor dining set",
+      "Beach essentials (Beach towels, umbrella, beach blanket, snorkeling gear)"
     ],
     parking: [
       "Free parking on premises",

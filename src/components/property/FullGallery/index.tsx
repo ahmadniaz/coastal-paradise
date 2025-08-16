@@ -55,7 +55,7 @@ const galleryCategories = [
   { id: 'bathroom', name: 'Bathrooms', images: propertyImages.bathroom },
   { id: 'dining', name: 'Dining Area', images: propertyImages.dining },
   { id: 'outdoor', name: 'Outdoor', images: propertyImages.outdoor },
-  { id: 'additional', name: 'Additional', images: propertyImages.additional },
+  { id: 'additional', name: 'Local Area', images: propertyImages.additional },
 ];
 
 export default function FullGallery() {

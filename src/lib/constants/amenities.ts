@@ -26,14 +26,7 @@ export const amenities: Amenity[] = [
     description: "Hair dryer available",
     available: true
   },
-  {
-    id: "conditioner",
-    name: "Conditioner",
-    category: "bathroom",
-    icon: "soap",
-    description: "Hair conditioner provided",
-    available: true
-  },
+
   {
     id: "outdoor-shower",
     name: "Outdoor Shower",
@@ -142,38 +135,46 @@ export const amenities: Amenity[] = [
     description: "Collection of family board games",
     available: true
   },
+  {
+    id: "beach-chairs",
+    name: "Beach Chairs",
+    category: "entertainment",
+    icon: "beach_access",
+    description: "Comfortable beach chairs for outdoor relaxation",
+    available: true
+  },
+  {
+    id: "cooler",
+    name: "Cooler",
+    category: "entertainment",
+    icon: "ac_unit",
+    description: "Portable cooler for beach trips and outdoor activities",
+    available: true
+  },
+  {
+    id: "snorkeling-equipment",
+    name: "Snorkeling Equipment",
+    category: "entertainment",
+    icon: "pool",
+    description: "Snorkeling gear for underwater exploration",
+    available: true
+  },
+  {
+    id: "bicycles-entertainment",
+    name: "Bicycles",
+    category: "entertainment",
+    icon: "directions_bike",
+    description: "Bicycles available for exploring the area",
+    available: true
+  },
 
   // Family Amenities
   {
-    id: "children-books-0-2",
-    name: "Children's Books and Toys (0-2 years)",
+    id: "children-books-toys",
+    name: "Children's Books and Toys",
     category: "family",
     icon: "child_care",
-    description: "Age-appropriate books and toys for toddlers",
-    available: true
-  },
-  {
-    id: "children-books-2-5",
-    name: "Children's Books and Toys (2-5 years)",
-    category: "family",
-    icon: "child_care",
-    description: "Age-appropriate books and toys for preschoolers",
-    available: true
-  },
-  {
-    id: "children-books-5-10",
-    name: "Children's Books and Toys (5-10 years)",
-    category: "family",
-    icon: "child_care",
-    description: "Age-appropriate books and toys for school-age children",
-    available: true
-  },
-  {
-    id: "children-books-10-plus",
-    name: "Children's Books and Toys (10+ years)",
-    category: "family",
-    icon: "child_care",
-    description: "Age-appropriate books and toys for older children",
+    description: "Age-appropriate books and toys for children of all ages",
     available: true
   },
   {
@@ -434,6 +435,23 @@ export const amenities: Amenity[] = [
     description: "Gas barbecue grill",
     available: true
   },
+
+  {
+    id: "outdoor-chair",
+    name: "Outside Chair",
+    category: "outdoor",
+    icon: "deck",
+    description: "Comfortable outdoor chairs",
+    available: true
+  },
+  {
+    id: "outdoor-dining-set",
+    name: "Outdoor Dining Set",
+    category: "outdoor",
+    icon: "restaurant",
+    description: "Outdoor dining table and chairs",
+    available: true
+  },
   {
     id: "beach-essentials",
     name: "Beach Essentials",
@@ -442,14 +460,7 @@ export const amenities: Amenity[] = [
     description: "Beach towels, umbrella, beach blanket, snorkeling gear",
     available: true
   },
-  {
-    id: "bikes",
-    name: "Bikes",
-    category: "outdoor",
-    icon: "directions_bike",
-    description: "Bicycles available for guests",
-    available: true
-  },
+
 
   // Parking and Facilities Amenities
   {
@@ -525,3 +536,4 @@ export const amenityCategories = [
   { id: "parking", name: "Parking", icon: "local_parking" },
   { id: "services", name: "Services", icon: "room_service" }
 ];
+

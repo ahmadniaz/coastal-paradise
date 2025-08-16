@@ -118,7 +118,7 @@ export default function LocationSection() {
               color: 'secondary.main',
             }}
           >
-            Discover the Beauty of Jupiter, Florida
+            Discover the Beauty of Palm Beach County, Florida
           </Typography>
         </motion.div>
 
@@ -288,7 +288,7 @@ export default function LocationSection() {
                 mb: 2,
               }}
             >
-              Ready to Explore Jupiter?
+              Ready to Explore Tequesta?
             </Typography>
             <Typography
               variant="body1"
@@ -300,7 +300,7 @@ export default function LocationSection() {
                 mx: 'auto',
               }}
             >
-              Book your stay at Coastal Paradise and discover all that Jupiter, Florida has to offer. 
+              Book your stay at Coastal Paradise and discover all that Tequesta, Florida has to offer. 
               From pristine beaches to charming downtown, your perfect coastal adventure awaits.
             </Typography>
           </Box>
