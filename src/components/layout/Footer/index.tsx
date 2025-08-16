@@ -73,7 +73,7 @@ export default function Footer() {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+1 (973) 747-6448',
       href: 'tel:+15551234567',
     },
     {

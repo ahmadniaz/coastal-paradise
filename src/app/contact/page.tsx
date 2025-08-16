@@ -33,7 +33,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    value: '+1 (555) 123-4567',
+    value: '+1 (973) 747-6448',
     description: 'Call us for immediate assistance',
     href: 'tel:+15551234567',
   },
