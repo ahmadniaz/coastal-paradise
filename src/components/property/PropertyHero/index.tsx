@@ -53,9 +53,9 @@ export default function PropertyHero() {
               rgba(0, 0, 0, 0.2) 50%, 
               rgba(0, 0, 0, 0.4) 100%
             ), 
-            url('${propertyImages.exterior[0]}')`,
+            url('${propertyImages.exterior[1]}')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center 20%',
+            backgroundPosition: 'center 30%',
             backgroundAttachment: { xs: 'scroll', md: 'fixed' },
             backgroundRepeat: 'no-repeat',
             '&::before': {
@@ -210,26 +210,48 @@ export default function PropertyHero() {
                   }}
                 >
                   <Box sx={{ textAlign: 'center' }}>
-                    <Typography
-                      variant="h4"
-                      sx={{
-                        color: 'white',
-                        fontFamily: 'var(--font-playfair)',
-                        fontWeight: 700,
-                        textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
-                      }}
-                    >
-                      {propertyData.rating} ⭐⭐⭐⭐⭐
-                    </Typography>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
+                      <Typography
+                        variant="h3"
+                        sx={{
+                          color: 'white',
+                          fontFamily: 'var(--font-playfair)',
+                          fontWeight: 700,
+                          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+                          mr: 1,
+                        }}
+                      >
+                        {propertyData.rating}
+                      </Typography>
+                      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        {[...Array(5)].map((_, index) => (
+                          <Box
+                            key={index}
+                            component="span"
+                            sx={{
+                              color: index < Math.floor(propertyData.rating) ? '#FFD700' : 'rgba(255, 255, 255, 0.3)',
+                              fontSize: '1.5rem',
+                              lineHeight: 1,
+                              textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+                              filter: index < Math.floor(propertyData.rating) ? 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.3))' : 'none',
+                            }}
+                          >
+                            ★
+                          </Box>
+                        ))}
+                      </Box>
+                    </Box>
                     <Typography
                       variant="body2"
                       sx={{
-                        color: 'white',
+                        color: 'rgba(255, 255, 255, 0.9)',
                         fontFamily: 'var(--font-poppins)',
+                        fontWeight: 500,
                         textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+                        fontSize: '0.875rem',
                       }}
                     >
-                      {propertyData.reviewCount} Reviews
+                      {propertyData.reviewCount} reviews
                     </Typography>
                   </Box>
 
