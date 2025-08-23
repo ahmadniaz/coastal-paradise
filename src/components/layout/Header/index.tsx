@@ -147,34 +147,7 @@ export default function Header() {
                   </Box>
                 </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <Button
-                    component={Link}
-                    href="/booking"
-                    variant="contained"
-                    sx={{
-                      backgroundColor: 'secondary.main',
-                      color: 'white',
-                      fontFamily: 'var(--font-poppins)',
-                      fontWeight: 600,
-                      px: 3,
-                      py: 1,
-                      borderRadius: 2,
-                      '&:hover': {
-                        backgroundColor: 'secondary.dark',
-                        transform: 'translateY(-2px)',
-                        boxShadow: '0 8px 25px rgba(255, 152, 0, 0.3)',
-                      },
-                      transition: 'all 0.3s ease',
-                    }}
-                  >
-                    Book Now
-                  </Button>
-                </motion.div>
+
               </Box>
             )}
 

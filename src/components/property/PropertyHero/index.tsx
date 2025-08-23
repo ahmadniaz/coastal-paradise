@@ -47,6 +47,7 @@ export default function PropertyHero() {
           sx={{
             width: '100%',
             height: '100%',
+            backgroundColor: 'primary.main',
             background: `linear-gradient(135deg, 
               rgba(0, 0, 0, 0.4) 0%, 
               rgba(0, 0, 0, 0.2) 50%, 
@@ -54,8 +55,9 @@ export default function PropertyHero() {
             ), 
             url('${propertyImages.exterior[0]}')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center 20%',
+            backgroundAttachment: { xs: 'scroll', md: 'fixed' },
+            backgroundRepeat: 'no-repeat',
             '&::before': {
               content: '""',
               position: 'absolute',
@@ -137,7 +139,7 @@ export default function PropertyHero() {
                   <Button
                     variant="contained"
                     size="large"
-                    href="/booking"
+                    href="/contact"
                     sx={{
                       backgroundColor: 'secondary.main',
                       color: 'white',
@@ -155,7 +157,7 @@ export default function PropertyHero() {
                       transition: 'all 0.3s ease',
                     }}
                   >
-                    Book Your Stay
+                    Contact Us
                   </Button>
                 </motion.div>
 
@@ -217,7 +219,7 @@ export default function PropertyHero() {
                         textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
                       }}
                     >
-                      {propertyData.rating}
+                      {propertyData.rating} ⭐⭐⭐⭐⭐
                     </Typography>
                     <Typography
                       variant="body2"
@@ -289,7 +291,7 @@ export default function PropertyHero() {
                         textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
                       }}
                     >
-                      ${propertyData.price.base}
+                      ${propertyData.price.base}+
                     </Typography>
                     <Typography
                       variant="body2"
@@ -299,7 +301,7 @@ export default function PropertyHero() {
                         textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
                       }}
                     >
-                      per night
+                      per night for whole house
                     </Typography>
                   </Box>
                 </Box>
@@ -317,7 +319,7 @@ export default function PropertyHero() {
         transition={{ duration: 1, delay: 1.5 }}
         style={{
           position: 'absolute',
-          bottom: 30,
+          bottom: 80,
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 3,

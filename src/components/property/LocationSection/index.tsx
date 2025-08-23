@@ -22,11 +22,12 @@ import { motion } from 'framer-motion';
 
 const attractions = [
   {
-    name: 'Jupiter Beach',
+    name: 'Jupiter Beaches',
     category: 'Beach',
     distance: '10 min',
     icon: BeachAccess,
     description: 'Pristine white sand beaches with crystal clear waters',
+    link: 'https://www.jupiter.fl.us/465/Beaches'
   },
   {
     name: 'Jupiter Inlet Lighthouse',
@@ -34,6 +35,7 @@ const attractions = [
     distance: '15 min',
     icon: Park,
     description: 'Historic lighthouse with stunning ocean views',
+    link: 'https://www.jupiterlighthouse.org/'
   },
   {
     name: 'Loggerhead Marinelife Center',
@@ -41,20 +43,7 @@ const attractions = [
     distance: '12 min',
     icon: LocalActivity,
     description: 'Marine life conservation center and turtle hospital',
-  },
-  {
-    name: 'Jupiter Pointe Marina',
-    category: 'Marina',
-    distance: '8 min',
-    icon: BeachAccess,
-    description: 'Full-service marina with boat rentals and charters',
-  },
-  {
-    name: 'Downtown Jupiter',
-    category: 'Shopping',
-    distance: '5 min',
-    icon: ShoppingCart,
-    description: 'Charming downtown with shops, restaurants, and cafes',
+    link: 'https://marinelife.org/'
   },
   {
     name: 'Guanabanas Restaurant',
@@ -62,6 +51,29 @@ const attractions = [
     distance: '3 min',
     icon: Restaurant,
     description: 'Popular waterfront restaurant with live music',
+    link: 'https://www.guanabanas.com/'
+  },
+  {
+    name: 'UTiki Restaurant',
+    category: 'Restaurant',
+    distance: '5 min',
+    icon: Restaurant,
+    description: 'Beachfront dining with tropical atmosphere',
+    link: 'https://www.utikibeach.com/'
+  },
+  {
+    name: 'Busch Wildlife Sanctuary',
+    category: 'Attraction',
+    distance: '8 min',
+    icon: Park,
+    description: 'Wildlife sanctuary and nature center',
+  },
+  {
+    name: 'Harborside Place',
+    category: 'Shopping',
+    distance: '5 min',
+    icon: ShoppingCart,
+    description: 'Charming center with shops, restaurants, and cafes',
   },
 ];
 
@@ -209,16 +221,27 @@ export default function LocationSection() {
                           }}
                         />
                         <Box>
-                          <Typography
-                            variant="h6"
-                            sx={{
-                              fontFamily: 'var(--font-poppins)',
-                              fontWeight: 600,
-                              color: 'primary.main',
-                            }}
-                          >
-                            {attraction.name}
-                          </Typography>
+                                                <Typography
+                        variant="h6"
+                        component={attraction.link ? 'a' : 'div'}
+                        href={attraction.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          fontFamily: 'var(--font-poppins)',
+                          fontWeight: 600,
+                          color: attraction.link ? 'primary.main' : 'primary.main',
+                          textDecoration: attraction.link ? 'none' : 'inherit',
+                          cursor: attraction.link ? 'pointer' : 'default',
+                          '&:hover': {
+                            color: attraction.link ? 'primary.dark' : 'primary.main',
+                            textDecoration: attraction.link ? 'underline' : 'none',
+                          },
+                          transition: 'all 0.2s ease',
+                        }}
+                      >
+                        {attraction.name}
+                      </Typography>
                           <Chip
                             label={attraction.distance}
                             size="small"

@@ -6,19 +6,19 @@ export const propertyData = {
   rating: 5.0,
   reviewCount: 20,
   price: {
-    base: 250,
+    base: 200,
     currency: "USD",
     period: "night"
   },
   description: {
-    short: "Modern tropical design with lush gardens and outdoor spaces, just 10 minutes to the beach with walkable amenities.",
+    short: "Modern tropical design with lush gardens and outdoor spaces, just 10 minutes to the beach and a step from Shops and restaurants.",
     long: "Experience the perfect blend of modern luxury and tropical tranquility at Coastal Paradise. This stunning 3-bedroom, 2-bathroom vacation home features contemporary design elements that seamlessly integrate with the natural beauty of Jupiter, Florida. Located just 10 minutes from pristine beaches and surrounded by lush gardens, this property offers the ultimate coastal living experience.",
     features: [
-      "Modern tropical architecture",
-      "Lush private gardens",
-      "Outdoor living spaces",
-      "10 minutes to pristine beaches",
-      "Walkable to local amenities",
+      "Modern tropical Design",
+      "Lush private gardens 🌴",
+      "Outdoor living spaces 🏖️",
+      "Near Beaches",
+      "Walking distance to shops and restaurants",
       "Fully equipped kitchen",
       "High-speed WiFi",
       "Smart home features"
@@ -126,12 +126,12 @@ export const propertyData = {
     ],
     duringStay: [
       "6 guests maximum",
-      "Pets allowed",
       "No parties or events",
       "Commercial photography allowed",
-      "No smoking"
+      "No smoking indoors"
     ],
     beforeLeave: [
+      "Strip beds",
       "Gather used towels",
       "Throw trash away",
       "Turn things off",

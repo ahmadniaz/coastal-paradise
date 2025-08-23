@@ -305,14 +305,7 @@ export const amenities: Amenity[] = [
     description: "Complete set of dishes, bowls, plates, cups, etc.",
     available: true
   },
-  {
-    id: "freezer",
-    name: "Freezer",
-    category: "kitchen",
-    icon: "kitchen",
-    description: "Freezer compartment in refrigerator",
-    available: true
-  },
+
   {
     id: "dishwasher",
     name: "Dishwasher",
@@ -322,19 +315,11 @@ export const amenities: Amenity[] = [
     available: true
   },
   {
-    id: "stove",
-    name: "Stove",
+    id: "stove-oven",
+    name: "Stove and Oven",
     category: "kitchen",
     icon: "oven",
-    description: "Electric stove top",
-    available: true
-  },
-  {
-    id: "oven",
-    name: "Oven",
-    category: "kitchen",
-    icon: "oven",
-    description: "Electric oven",
+    description: "Electric stove top and oven",
     available: true
   },
   {
@@ -350,7 +335,7 @@ export const amenities: Amenity[] = [
     name: "Coffee Maker",
     category: "kitchen",
     icon: "coffee",
-    description: "Drip coffee maker with filters",
+    description: "Keurig and a Drip coffee maker",
     available: true
   },
   {
@@ -481,14 +466,7 @@ export const amenities: Amenity[] = [
   },
 
   // Services Amenities
-  {
-    id: "pets-allowed",
-    name: "Pets Allowed",
-    category: "services",
-    icon: "pets",
-    description: "Pets are welcome with approval",
-    available: true
-  },
+
   {
     id: "assistance-animals",
     name: "Assistance Animals Always Allowed",
@@ -524,6 +502,8 @@ export const amenities: Amenity[] = [
 ];
 
 export const amenityCategories = [
+  { id: "outdoor", name: "Outdoor", icon: "park" },
+  { id: "kitchen", name: "Kitchen & Dining", icon: "kitchen" },
   { id: "bathroom", name: "Bathroom", icon: "bathroom" },
   { id: "bedroom", name: "Bedroom & Laundry", icon: "bed" },
   { id: "entertainment", name: "Entertainment", icon: "movie" },
@@ -531,8 +511,6 @@ export const amenityCategories = [
   { id: "heating", name: "Heating & Cooling", icon: "ac_unit" },
   { id: "safety", name: "Safety", icon: "security" },
   { id: "internet", name: "Internet & Office", icon: "wifi" },
-  { id: "kitchen", name: "Kitchen & Dining", icon: "kitchen" },
-  { id: "outdoor", name: "Outdoor", icon: "park" },
   { id: "parking", name: "Parking", icon: "local_parking" },
   { id: "services", name: "Services", icon: "room_service" }
 ];

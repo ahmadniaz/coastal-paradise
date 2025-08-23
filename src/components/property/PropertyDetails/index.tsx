@@ -229,7 +229,7 @@ export default function PropertyDetails() {
                       opacity: 0.9,
                     }}
                   >
-                    per night
+                    per night for whole house
                   </Typography>
                   <Typography
                     variant="body2"
@@ -308,7 +308,14 @@ export default function PropertyDetails() {
                               lineHeight: 1.6,
                             }}
                           >
-                            Experience the perfect blend of comfort and luxury with our carefully curated amenities and thoughtful design.
+                            {feature === "Modern tropical Design" && "Sleek, open design with airy interiors, ceiling fans, and abundant natural light—bringing the ease of island living indoors. Each bedroom has its character: the Palm Room, the Coral Room, and the Nautical Room."}
+                            {feature === "Lush private gardens 🌴" && "Relax in serene tropical gardens—perfect for morning coffee or evening cocktails. The owner has curated a collection of unique plants and vibrant flowers, creating a lush, peaceful retreat."}
+                            {feature === "Outdoor living spaces 🏖️" && "Shaded patio, sun loungers, and a tropical outdoor shower."}
+                            {feature === "Near Beaches" && "Jupiter has approximately 3.4 miles of beautiful beaches along its coastline. Jupiter's beaches are known for their warm, clear waters and White Sandy shores."}
+                            {feature === "Walking distance to shops and restaurants" && "Dine, shop, and explore - all within steps of your stay. Try Perk Coffee shop and local restaurants: Gallerie Grill, Blackbird, Lynora's, Lila, Nemo, Eataliano, Evo, Buco,..."}
+                            {feature === "Fully equipped kitchen" && "Cook or Grill at home with modern appliances and all the essentials."}
+                            {feature === "High-speed WiFi" && "Stay connected with fast, reliable internet throughout the property."}
+                            {feature === "Smart home features" && "Enjoy Smart TV to watch local channels or connect to your favorite app."}
                           </Typography>
                         </CardContent>
                       </Card>

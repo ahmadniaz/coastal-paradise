@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
@@ -10,6 +10,8 @@ import {
   Button,
   useTheme,
   Paper,
+  Snackbar,
+  Alert,
 } from '@mui/material';
 import {
   Email,
@@ -24,18 +26,11 @@ import Footer from '@/components/layout/Footer';
 
 const contactInfo = [
   {
-    icon: Email,
-    title: 'Email',
-    value: 'hello@coastalparadise.com',
-    description: 'Send us an email anytime',
-    href: 'mailto:hello@coastalparadise.com',
-  },
-  {
     icon: Phone,
     title: 'Phone',
     value: '+1 (973) 747-6448',
     description: 'Call us for immediate assistance',
-    href: 'tel:+15551234567',
+    href: 'tel:+19737476448',
   },
   {
     icon: LocationOn,
@@ -47,13 +42,103 @@ const contactInfo = [
   {
     icon: AccessTime,
     title: 'Response Time',
-    value: 'Within 2 hours',
+    value: 'Less than 24 hours',
     description: 'We typically respond quickly',
   },
 ];
 
 export default function ContactPage() {
   const theme = useTheme();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    message: '',
+    severity: 'success' as 'success' | 'error'
+  });
+
+  const handleInputChange = (field: string) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: event.target.value
+    }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    
+    // Validate form
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      setSnackbar({
+        open: true,
+        message: 'Please fill in all required fields',
+        severity: 'error'
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSnackbar({
+        open: true,
+        message: 'Please enter a valid email address',
+        severity: 'error'
+      });
+      return;
+    }
+
+    try {
+      // Create email body
+      const emailBody = `
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+      `;
+
+      // Open default email client with pre-filled data
+      const mailtoLink = `mailto:nfahimi@yahoo.com?subject=${encodeURIComponent(formData.subject || 'Contact from Coastal Paradise Website')}&body=${encodeURIComponent(emailBody)}`;
+      
+      window.open(mailtoLink, '_blank');
+      
+      // Show success message
+      setSnackbar({
+        open: true,
+        message: 'Email client opened successfully! Please send the email.',
+        severity: 'success'
+      });
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      setSnackbar({
+        open: true,
+        message: 'Failed to open email client. Please try again.',
+        severity: 'error'
+      });
+    }
+  };
+
+  const handleCloseSnackbar = () => {
+    setSnackbar(prev => ({ ...prev, open: false }));
+  };
 
   return (
     <Box sx={{ minHeight: '100vh', backgroundColor: 'background.default' }}>
@@ -175,13 +260,16 @@ export default function ContactPage() {
                   We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.
                 </Typography>
 
-                <Box component="form" sx={{ mt: 4 }}>
+                <Box component="form" onSubmit={handleSubmit} sx={{ mt: 4 }}>
                   {/* Row 1: First Name and Last Name */}
                   <Box sx={{ display: 'flex', gap: 3, mb: 3, flexDirection: { xs: 'column', sm: 'row' } }}>
                     <TextField
                       fullWidth
-                      label="First Name"
+                      label="First Name *"
                       variant="outlined"
+                      value={formData.firstName}
+                      onChange={handleInputChange('firstName')}
+                      required
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           fontFamily: 'var(--font-poppins)',
@@ -203,8 +291,11 @@ export default function ContactPage() {
                     />
                     <TextField
                       fullWidth
-                      label="Last Name"
+                      label="Last Name *"
                       variant="outlined"
+                      value={formData.lastName}
+                      onChange={handleInputChange('lastName')}
+                      required
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           fontFamily: 'var(--font-poppins)',
@@ -230,9 +321,12 @@ export default function ContactPage() {
                   <Box sx={{ display: 'flex', gap: 3, mb: 3, flexDirection: { xs: 'column', sm: 'row' } }}>
                     <TextField
                       fullWidth
-                      label="Email"
+                      label="Email *"
                       type="email"
                       variant="outlined"
+                      value={formData.email}
+                      onChange={handleInputChange('email')}
+                      required
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           fontFamily: 'var(--font-poppins)',
@@ -256,6 +350,8 @@ export default function ContactPage() {
                       fullWidth
                       label="Phone"
                       variant="outlined"
+                      value={formData.phone}
+                      onChange={handleInputChange('phone')}
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           fontFamily: 'var(--font-poppins)',
@@ -283,6 +379,8 @@ export default function ContactPage() {
                       fullWidth
                       label="Subject"
                       variant="outlined"
+                      value={formData.subject}
+                      onChange={handleInputChange('subject')}
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           fontFamily: 'var(--font-poppins)',
@@ -308,10 +406,13 @@ export default function ContactPage() {
                   <Box sx={{ mb: 4 }}>
                     <TextField
                       fullWidth
-                      label="Message"
+                      label="Message *"
                       multiline
                       rows={8}
                       variant="outlined"
+                      value={formData.message}
+                      onChange={handleInputChange('message')}
+                      required
                       placeholder="Tell us about your inquiry, questions, or special requests..."
                       sx={{
                         '& .MuiOutlinedInput-root': {
@@ -339,6 +440,7 @@ export default function ContactPage() {
                     fullWidth
                     variant="contained"
                     size="large"
+                    type="submit"
                     startIcon={<Send />}
                     sx={{
                       backgroundColor: 'secondary.main',
@@ -511,6 +613,22 @@ export default function ContactPage() {
       </Container>
 
       <Footer />
+      
+      {/* Snackbar for notifications */}
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <Alert 
+          onClose={handleCloseSnackbar} 
+          severity={snackbar.severity}
+          sx={{ width: '100%' }}
+        >
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
